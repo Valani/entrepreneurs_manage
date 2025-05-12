@@ -10,12 +10,12 @@
 @endforeach
 @endsection
 @section('content')
-<h1>Create New Entrepreneur</h1>
+<h1>Створити нового підприємця</h1>
 
 <form action="{{ route('entrepreneurs.store') }}" method="POST">
     @csrf
     <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
+        <label for="name" class="form-label">Назва</label>
         <input type="text" class="form-control @error('name') is-invalid @enderror"
             id="name" name="name" value="{{ old('name') }}" required>
         @error('name')
@@ -24,7 +24,7 @@
     </div>
 
     <div class="mb-3">
-        <label for="ipn" class="form-label">IPN</label>
+        <label for="ipn" class="form-label">ІПН</label>
         <input type="text" class="form-control @error('ipn') is-invalid @enderror"
             id="ipn" name="ipn" value="{{ old('ipn') }}" required>
         @error('ipn')
@@ -42,7 +42,7 @@
     </div>
 
     <div class="mb-3">
-        <label for="tax_office_name" class="form-label">Tax Office Name</label>
+        <label for="tax_office_name" class="form-label">Назва податкової</label>
         <input type="text" class="form-control @error('tax_office_name') is-invalid @enderror"
             id="tax_office_name" name="tax_office_name" value="{{ old('tax_office_name') }}" required>
         @error('tax_office_name')
@@ -51,13 +51,13 @@
     </div>
 
     <div class="mb-3">
-        <label for="group" class="form-label">Group</label>
+        <label for="group" class="form-label">Група</label>
         <select class="form-control @error('group') is-invalid @enderror"
             id="group" name="group" required>
-            <option value="">Select Group</option>
-            <option value="1" {{ (old('group', $entrepreneur->group ?? '') == '1') ? 'selected' : '' }}>Group 1</option>
-            <option value="2" {{ (old('group', $entrepreneur->group ?? '') == '2') ? 'selected' : '' }}>Group 2</option>
-            <option value="3" {{ (old('group', $entrepreneur->group ?? '') == '3') ? 'selected' : '' }}>Group 3</option>
+            <option value="">Виберіть групу</option>
+            <option value="1" {{ (old('group', $entrepreneur->group ?? '') == '1') ? 'selected' : '' }}>Група 1</option>
+            <option value="2" {{ (old('group', $entrepreneur->group ?? '') == '2') ? 'selected' : '' }}>Група 2</option>
+            <option value="3" {{ (old('group', $entrepreneur->group ?? '') == '3') ? 'selected' : '' }}>Група 3</option>
         </select>
         @error('group')
         <div class="invalid-feedback">{{ $message }}</div>
@@ -65,12 +65,12 @@
     </div>
 
     <div class="mb-3">
-        <label class="form-label">KVEDs</label>
+        <label class="form-label">КВЕДи</label>
         <div class="mb-3">
             <input type="text"
                 class="form-control"
                 id="kvedSearch"
-                placeholder="Search KVEDs by number or name...">
+                placeholder="Пошук КВЕДів за номером або назвою...">
         </div>
 
         <!-- Hidden container for maintaining selected KVEDs -->
@@ -105,13 +105,13 @@
 
     <div class="card mb-4">
         <div class="card-body">
-            <h5 class="card-title">Keys Information</h5>
+            <h5 class="card-title">Інформація про ключі</h5>
 
             <div class="mb-3">
-                <h6>Private Key</h6>
+                <h6>Приватний ключ</h6>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="private_key_start" class="form-label">Start Date</label>
+                        <label for="private_key_start" class="form-label">Дата початку</label>
                         <input type="date" class="form-control @error('private_key_start') is-invalid @enderror"
                             id="private_key_start" name="private_key_start" value="{{ old('private_key_start') }}">
                         @error('private_key_start')
@@ -119,7 +119,7 @@
                         @enderror
                     </div>
                     <div class="col-md-6">
-                        <label for="private_key_end" class="form-label">End Date</label>
+                        <label for="private_key_end" class="form-label">Дата закінчення</label>
                         <input type="date" class="form-control @error('private_key_end') is-invalid @enderror"
                             id="private_key_end" name="private_key_end" value="{{ old('private_key_end') }}">
                         @error('private_key_end')
@@ -130,10 +130,10 @@
             </div>
 
             <div class="mb-3">
-                <h6>ASC Key</h6>
+                <h6>Ключ АСЦ</h6>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="asc_key_start" class="form-label">Start Date</label>
+                        <label for="asc_key_start" class="form-label">Дата початку</label>
                         <input type="date" class="form-control @error('asc_key_start') is-invalid @enderror"
                             id="asc_key_start" name="asc_key_start" value="{{ old('asc_key_start') }}">
                         @error('asc_key_start')
@@ -141,7 +141,7 @@
                         @enderror
                     </div>
                     <div class="col-md-6">
-                        <label for="asc_key_end" class="form-label">End Date</label>
+                        <label for="asc_key_end" class="form-label">Дата закінчення</label>
                         <input type="date" class="form-control @error('asc_key_end') is-invalid @enderror"
                             id="asc_key_end" name="asc_key_end" value="{{ old('asc_key_end') }}">
                         @error('asc_key_end')
@@ -154,8 +154,8 @@
     </div>
 
     <div class="mt-4">
-        <button type="submit" class="btn btn-primary me-2">Create Entrepreneur</button>
-        <a href="{{ route('entrepreneurs.index') }}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary me-2">Створити підприємця</button>
+        <a href="{{ route('entrepreneurs.index') }}" class="btn btn-secondary">Скасувати</a>
     </div>
 </form>
 @endsection
@@ -211,7 +211,7 @@
                         $('#kvedList').html(html);
                     },
                     error: function() {
-                        $('#kvedList').html('<div class="text-danger">Error loading KVEDs</div>');
+                        $('#kvedList').html('<div class="text-danger">Помилка завантаження КВЕДів</div>');
                     }
                 });
             }, 300);

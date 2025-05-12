@@ -35,7 +35,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger"
-                onclick="return confirm('Are you sure you want to delete this entrepreneur?')">
+                onclick="return confirm('Ви впевнені, що хочете видалити цього підприємця?')">
                 Видалити
             </button>
         </form>
@@ -279,7 +279,7 @@
                     checkbox.prop('disabled', false);
                     if (!response.success) {
                         checkbox.prop('checked', !checkbox.prop('checked'));
-                        alert('Failed to update report status: ' + response.message);
+                        alert('Помилка оновлення статусу звіту: ' + response.message);
                     }
                 },
                 error: function(xhr, status, error) {
@@ -287,7 +287,7 @@
                     console.error('Response:', xhr.responseText);
                     checkbox.prop('disabled', false);
                     checkbox.prop('checked', originalState);
-                    alert('Failed to update report status. Please try again.');
+                    alert('Помилка оновлення статусу звіту. Будь ласка, спробуйте знову.');
                 }
             });
         });

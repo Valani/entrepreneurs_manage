@@ -12,16 +12,16 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h2>Settings</h2>
+        <h2>Налаштування</h2>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Value</th>
-                        <th>Actions</th>
+                        <th>Назва</th>
+                        <th>Значення</th>
+                        <th>Дії</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="text" name="value" value="{{ $setting->value }}" class="form-control me-2">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">Зберегти</button>
                             </form>
                         </td>
                     </tr>

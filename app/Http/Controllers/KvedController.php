@@ -28,6 +28,6 @@ class KvedController extends Controller
         Kved::create($validated);
 
         return redirect()->route('kveds.index')
-            ->with('success', 'KVED created successfully.');
+            ->with('success', 'КВЕД успішно створено.');
     }
 }

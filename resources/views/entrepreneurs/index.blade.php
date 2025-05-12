@@ -8,10 +8,10 @@
             </a>
         </div>
     @endforeach
-    
+
     {{ $entrepreneurs->links() }}
 @endsection
 
 @section('content')
-    <h1>Select an entrepreneur from the sidebar to view details</h1>
+    <h1>Виберіть підприємця зі списку, щоб переглянути деталі</h1>
 @endsection

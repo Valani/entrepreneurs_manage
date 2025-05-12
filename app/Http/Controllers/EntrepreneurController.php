@@ -69,7 +69,7 @@ class EntrepreneurController extends Controller
         }
 
         return redirect()->route('entrepreneurs.show', $entrepreneur)
-            ->with('success', 'Entrepreneur created successfully.');
+            ->with('success', 'Підприємця успішно створено.');
     }
 
     public function show(Entrepreneur $entrepreneur)
@@ -215,7 +215,7 @@ class EntrepreneurController extends Controller
         }
 
         return redirect()->route('entrepreneurs.show', $entrepreneur)
-            ->with('success', 'Entrepreneur updated successfully.');
+            ->with('success', 'Підприємця успішно оновлено.');
     }
 
     public function keysOverview()
@@ -252,7 +252,7 @@ class EntrepreneurController extends Controller
     {
         $entrepreneur->delete();
         return redirect()->route('entrepreneurs.index')
-            ->with('success', 'Entrepreneur deleted successfully.');
+            ->with('success', 'Підприємця успішно видалено.');
     }
 
     public function search(Request $request)

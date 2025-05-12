@@ -126,7 +126,7 @@ class FinancialDataController extends Controller
             ]
         );
 
-        return response()->json(['success' => true, 'message' => 'Record updated']);
+        return response()->json(['success' => true, 'message' => 'Запис оновлено']);
     }
 
     public function import(Request $request, Entrepreneur $entrepreneur)
@@ -160,7 +160,7 @@ class FinancialDataController extends Controller
                 $this->fileConverter->cleanup($tempFile);
             }
 
-            return response()->json(['success' => true, 'message' => 'Data imported successfully']);
+            return response()->json(['success' => true, 'message' => 'Дані успішно імпортовано']);
         } catch (\Exception $e) {
             // Clean up temporary file if it exists and there was an error
             if (isset($tempFile) && $tempFile) {
@@ -168,7 +168,7 @@ class FinancialDataController extends Controller
             }
 
             \Log::error('Import failed: ' . $e->getMessage());
-            return response()->json(['success' => false, 'message' => 'Import failed: ' . $e->getMessage()], 422);
+            return response()->json(['success' => false, 'message' => 'Помилка імпорту: ' . $e->getMessage()], 422);
         }
     }
 
