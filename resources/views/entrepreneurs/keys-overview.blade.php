@@ -64,7 +64,7 @@
 
 <div class="card mb-4 mt-4">
     <div class="card-header">
-        <h5 class="mb-0">Upcoming Key Expirations</h5>
+        <h5 class="mb-0">Ключі, що скоро закінчуються</h5>
     </div>
     <div class="card-body">
         @if($expiringKeys->count() > 0)
@@ -129,12 +129,12 @@
                 success: function(response) {
                     if (!response.success) {
                         checkbox.prop('checked', !originalState);
-                        alert('Failed to update report status');
+                        alert('Помилка оновлення статусу звіту');
                     }
                 },
                 error: function() {
                     checkbox.prop('checked', !originalState);
-                    alert('Failed to update report status');
+                    alert('Помилка оновлення статусу звіту');
                 }
             });
         });

@@ -58,7 +58,7 @@
                 <select class="form-select d-inline-block w-auto" id="month">
                     @foreach(range(1, 12) as $m)
                     <option value="{{ $m }}" {{ $month == $m ? 'selected' : '' }}>
-                        {{ Carbon\Carbon::create(null, $m, 1)->format('F') }}
+                        {{ ucfirst(__(\Carbon\Carbon::create(null, $m, 1)->locale('uk')->monthName)) }}
                     </option>
                     @endforeach
                 </select>
@@ -143,7 +143,7 @@
                 </tbody>
                 <tfoot>
                     <tr class="table-secondary fw-bold">
-                        <td>Total</td>
+                        <td>Загалом</td>
                         <td>{{ number_format($totalCash, 2) }}</td>
                         <td>{{ number_format($totalNonCash, 2) }}</td>
                         <td>{{ number_format($totalCash + $totalNonCash, 2) }}</td>

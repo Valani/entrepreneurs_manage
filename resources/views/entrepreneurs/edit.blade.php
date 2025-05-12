@@ -108,13 +108,13 @@
 
     <div class="card mb-4">
         <div class="card-body">
-            <h5 class="card-title">Keys Information</h5>
+            <h5 class="card-title">Інформація про ключі</h5>
 
             <div class="mb-3">
-                <h6>Private Key</h6>
+                <h6>Приватний ключ</h6>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="private_key_start" class="form-label">Start Date</label>
+                        <label for="private_key_start" class="form-label">Дата початку</label>
                         <input type="date" class="form-control @error('private_key_start') is-invalid @enderror"
                             id="private_key_start" name="private_key_start"
                             value="{{ old('private_key_start', $entrepreneur->keys->where('type', 'private')->first()?->date_start->format('Y-m-d')) }}">
@@ -123,7 +123,7 @@
                         @enderror
                     </div>
                     <div class="col-md-6">
-                        <label for="private_key_end" class="form-label">End Date</label>
+                        <label for="private_key_end" class="form-label">Дата закінчення</label>
                         <input type="date" class="form-control @error('private_key_end') is-invalid @enderror"
                             id="private_key_end" name="private_key_end"
                             value="{{ old('private_key_end', $entrepreneur->keys->where('type', 'private')->first()?->date_end->format('Y-m-d')) }}">
@@ -135,10 +135,10 @@
             </div>
 
             <div class="mb-3">
-                <h6>ASC Key</h6>
+                <h6>Ключ АСЦ</h6>
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="asc_key_start" class="form-label">Start Date</label>
+                        <label for="asc_key_start" class="form-label">Дата початку</label>
                         <input type="date" class="form-control @error('asc_key_start') is-invalid @enderror"
                             id="asc_key_start" name="asc_key_start"
                             value="{{ old('asc_key_start', $entrepreneur->keys->where('type', 'asc')->first()?->date_start->format('Y-m-d')) }}">
@@ -147,7 +147,7 @@
                         @enderror
                     </div>
                     <div class="col-md-6">
-                        <label for="asc_key_end" class="form-label">End Date</label>
+                        <label for="asc_key_end" class="form-label">Дата закінчення</label>
                         <input type="date" class="form-control @error('asc_key_end') is-invalid @enderror"
                             id="asc_key_end" name="asc_key_end"
                             value="{{ old('asc_key_end', $entrepreneur->keys->where('type', 'asc')->first()?->date_end->format('Y-m-d')) }}">
@@ -161,8 +161,8 @@
     </div>
 
     <div class="mt-4">
-        <button type="submit" class="btn btn-primary me-2">Update Entrepreneur</button>
-        <a href="{{ route('entrepreneurs.show', $entrepreneur) }}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary me-2">Оновити підприємця</button>
+        <a href="{{ route('entrepreneurs.show', $entrepreneur) }}" class="btn btn-secondary">Скасувати</a>
     </div>
 </form>
 @endsection

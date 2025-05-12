@@ -40,7 +40,7 @@
                     <i class="fas fa-plus me-2"></i>
                     <span>Створити</span>
                 </button>
-                <label for="year" class="form-label mb-0">Year:</label>
+                <label for="year" class="form-label mb-0">Рік:</label>
                 <select class="form-select" id="year" style="width: 120px;">
                     @foreach(range(now()->year - 5, now()->year) as $y)
                     <option value="{{ $y }}" {{ $year == $y ? 'selected' : '' }}>
@@ -53,7 +53,7 @@
         <div class="accordion" id="paymentsAccordion">
             @foreach($payments as $month => $monthPayments)
             @php
-            $monthName = \Carbon\Carbon::createFromFormat('m', $month)->format('F');
+            $monthName = ucfirst(__(\Carbon\Carbon::createFromFormat('m', $month)->locale('uk')->monthName));
             $isCurrentMonth = $month == now()->format('m') && $year == now()->year;
             @endphp
             <div class="accordion-item">
