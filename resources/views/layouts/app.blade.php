@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrepreneur Management</title>
+    <title>Управління підприємцями</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,14 +18,14 @@
         <!-- Primary Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h5 class="mb-3">Entrepreneur Management</h5>
+                <h5 class="mb-3">Управління підприємцями</h5>
                 <div class="search-container">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="search" class="form-control" placeholder="Search entrepreneurs...">
+                    <input type="text" id="search" class="form-control" placeholder="Пошук підприємців...">
                 </div>
                 <div>
                     <a href="{{ route('entrepreneurs.keys-overview') }}" class="btn btn-sm btn-outline-primary">
-                        <i class="fas fa-key me-1"></i>Overview
+                        <i class="fas fa-key me-1"></i>Огляд
                     </a>
                 </div>
             </div>
@@ -38,7 +38,7 @@
 
             <div class="action-buttons">
                 <a href="{{ route('entrepreneurs.create') }}" class="btn btn-primary w-100 mb-2">
-                    <i class="fas fa-plus me-2"></i>Добавити
+                    <i class="fas fa-plus me-2"></i>Додати
                 </a>
                 <a href="{{ route('settings.index') }}" class="btn btn-light w-100">
                     <i class="fas fa-cog me-2"></i>Налаштування
@@ -68,7 +68,7 @@
             let searchTimer;
 
             // Improved search functionality with debouncing
-            
+
 
             $('#search').on('keyup', function() {
                 clearTimeout(searchTimer);
@@ -85,7 +85,7 @@
                             let html = '';
                             data.forEach(function(entrepreneur) {
                                 html += `
-                        <a href="/entrepreneurs/${entrepreneur.id_entrepreneurs}" 
+                        <a href="/entrepreneurs/${entrepreneur.id_entrepreneurs}"
                            class="entrepreneur-item">
                             <i class="fas fa-user-tie"></i>
                             ${entrepreneur.name}
@@ -95,8 +95,8 @@
                             $('#entrepreneurs-list').html(html);
                         },
                         error: function(xhr) {
-                            console.error('Search failed:', xhr);
-                            $('#entrepreneurs-list').html('<div class="text-muted">Error loading results</div>');
+                            console.error('Помилка пошуку:', xhr);
+                            $('#entrepreneurs-list').html('<div class="text-muted">Помилка завантаження результатів</div>');
                         }
                     });
                 }, 300);
