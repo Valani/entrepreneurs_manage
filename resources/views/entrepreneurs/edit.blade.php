@@ -9,14 +9,14 @@
 @endforeach
 @endsection
 @section('content')
-<h1>Edit Entrepreneur</h1>
+<h1>Редагувати підприємця</h1>
 
 <form action="{{ route('entrepreneurs.update', $entrepreneur) }}" method="POST">
     @csrf
     @method('PUT')
 
     <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
+        <label for="name" class="form-label">Назва</label>
         <input type="text" class="form-control @error('name') is-invalid @enderror"
             id="name" name="name" value="{{ old('name', $entrepreneur->name) }}" required>
         @error('name')

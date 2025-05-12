@@ -31,17 +31,17 @@
 <div class="card">
     <div class="card-header">
         <div class="d-flex justify-content-between align-items-center">
-            <h2>Income Records - {{ $entrepreneur->name }}</h2>
+            <h2>Облік доходів - {{ $entrepreneur->name }}</h2>
             <div class="btn-group">
                 <label class="btn btn-secondary" for="importFile">
-                    Import
+                    Імпорт
                     <input type="file" id="importFile" class="d-none" accept=".csv,.xlsx">
                 </label>
                 <a href="{{ route('entrepreneurs.financial-data.export', [
                     'entrepreneur' => $entrepreneur->id_entrepreneurs,
                     'year' => $year,
                     'month' => $month
-                ]) }}" class="btn btn-secondary">Export</a>
+                ]) }}" class="btn btn-secondary">Експорт</a>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
                 <select class="form-select d-inline-block w-auto" id="quarter">
                     @foreach(range(1, 4) as $q)
                     <option value="{{ $q }}" {{ $quarter == $q ? 'selected' : '' }}>
-                        Quarter {{ $q }}
+                        Квартал {{ $q }}
                     </option>
                     @endforeach
                 </select>

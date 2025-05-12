@@ -9,7 +9,7 @@
 @endforeach
 @endsection
 @section('content')
-<h1>Overview</h1>
+<h1>Огляд</h1>
 <style>
     .secondary-nav {
         display: none;
@@ -18,14 +18,14 @@
 
 <div class="card">
     <div class="card-header">
-        <h5 class="mb-0">Quarter {{ $currentQuarter }} ({{ $currentYear }}) Reports Overview</h5>
+        <h5 class="mb-0">Звіти за {{ $currentQuarter }} квартал ({{ $currentYear }})</h5>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Entrepreneur</th>
+                        <th>Підприємець</th>
                         @foreach($reports as $report)
                         <th>{{ $report->name }}</th>
                         @endforeach
@@ -72,10 +72,10 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Entrepreneur</th>
-                        <th>Key Type</th>
-                        <th>Expiration Date</th>
-                        <th>Days Left</th>
+                        <th>Підприємець</th>
+                        <th>Тип ключа</th>
+                        <th>Дата закінчення</th>
+                        <th>Днів залишилось</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,7 +86,7 @@
                                 {{ $key->entrepreneur->name }}
                             </a>
                         </td>
-                        <td>{{ ucfirst($key->type) }} Key</td>
+                        <td>{{ $key->type == 'private' ? 'Приватний' : 'АСЦ' }} ключ</td>
                         <td>{{ $key->date_end->format('Y-m-d') }}</td>
                         <td>
                             @php

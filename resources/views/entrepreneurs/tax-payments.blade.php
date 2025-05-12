@@ -31,7 +31,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h2 class="mb-0">Tax Payments - {{ $entrepreneur->name }}</h2>
+        <h2 class="mb-0">Податкові платежі - {{ $entrepreneur->name }}</h2>
     </div>
     <div class="card-body">
         <div class="d-flex justify-content-between align-items-center mb-4">
